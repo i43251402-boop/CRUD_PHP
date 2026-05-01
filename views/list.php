@@ -32,4 +32,4 @@ $data = $controller->model->getAll();
         </td>
     </tr>
     <?php } ?>
-</table>
+</table> 
