@@ -13,7 +13,7 @@ class Buku {
     }
 
     public function getById($id) {
-        return $this->conn->query("SELECT * FROM buku WHERE id='$id'");
+        return $this->conn->query("SELECT * FROM buku WHERE id_buku='$id'");
     }
 
     public function create($nama, $jenis) {
@@ -22,12 +22,18 @@ class Buku {
     }
 
     public function update($id, $nama, $jenis) {
-        return $this->conn->query("UPDATE buku SET nama='$nama', 
+        return $this->conn->query("UPDATE buku SET nama_buku='$nama', 
 jurusan='$jenis' WHERE id='$id'");
     }
 
     public function delete($id) {
-        return $this->conn->query("DELETE FROM buku WHERE id='$id'");
+        return $this->conn->query("DELETE FROM buku WHERE id_buku='$id'");
     }
+
+    public function insert($nama, $jenis) {
+        $query = "INSERT INTO buku (nama_buku, jenis_buku) VALUES ('$nama', '$jenis')";
+        return $this->conn->query($query);
+    }
+
 }
 ?>
